@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suya Hut · Houston, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --brand: #C2410C;
+  --brand2: #EA580C;
+  --bg: #0C0A09;
+  --bg2: #161210;
+  --bg3: #1E1916;
+  --line: rgba(255,255,255,0.07);
+  --text: #F5F0EB;
+  --muted: rgba(245,240,235,0.45);
+  --accent: #FF5722;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(12,10,9,0.94);
+  backdrop-filter: blur(14px);
+  z-index: 100;
+}
+.logo img {
+  height: 52px;
+  width: auto;
+  display: block;
+  filter: brightness(1.05);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  border: 1px solid var(--brand);
+  color: var(--brand);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--brand); color: #fff; }
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+  border-bottom: 1px solid var(--line);
+}
+.hero-left {
+  padding: 72px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.hero-left::before {
+  content: 'SUYA';
+  position: absolute;
+  bottom: -40px;
+  left: -20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 260px;
+  color: rgba(255,255,255,0.02);
+  pointer-events: none;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 7vw, 112px);
+  line-height: 0.88;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+.hero h1 .outline {
+  -webkit-text-stroke: 1px var(--text);
+  color: transparent;
+}
+.hero-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 380px;
+  margin-bottom: 40px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.btn-primary {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--brand2); }
+.btn-ghost {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 40px;
+}
+.meta-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.meta-dot {
+  width: 4px; height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hero-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+.hero-img {
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.hero-img:nth-child(2) { border-right: none; }
+.hero-img:nth-child(3) { border-bottom: none; }
+.hero-img:nth-child(4) { border-right: none; border-bottom: none; }
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) brightness(0.85);
+  transition: filter 0.4s, transform 0.5s;
+}
+.hero-img:hover img { filter: saturate(1) brightness(1); transform: scale(1.04); }
+.hero-img-label {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(245,240,235,0.6);
+}
+
+/* STRIP */
+.strip {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.strip-item {
+  flex: 1;
+  padding: 20px 28px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.strip-item:last-child { border-right: none; }
+.strip-icon {
+  font-size: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.strip-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.strip-val {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+/* SECTION HEADER */
+.section-head {
+  padding: 56px 48px 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.section-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+}
+
+/* FOOD GRID */
+.food-section { border-bottom: 1px solid var(--line); padding-bottom: 56px; }
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  margin: 0 48px;
+}
+.food-card {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  position: relative;
+  cursor: default;
+}
+.food-card-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.food-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75) brightness(0.8);
+  transition: filter 0.4s, transform 0.5s;
+}
+.food-card:hover .food-card-img img {
+  filter: saturate(1.05) brightness(0.95);
+  transform: scale(1.06);
+}
+.food-card-body { padding: 20px 22px 24px; }
+.food-card-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.food-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.food-card-price {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* MENU */
+.menu-section { border-bottom: 1px solid var(--line); padding-bottom: 56px; }
+.menu-tabs {
+  display: flex;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 0 48px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.menu-tabs::-webkit-scrollbar { display: none; }
+.m-tab {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  cursor: pointer;
+  color: var(--muted);
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+.m-tab:hover { color: var(--text); }
+.m-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.menu-panel { display: none; margin: 0 48px; }
+.menu-panel.active { display: block; }
+
+.menu-note {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  gap: 24px;
+}
+.menu-row:last-child { border-bottom: none; }
+.menu-name {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+.menu-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.menu-price {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+.menu-group-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 24px 0 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 0;
+}
+
+/* REVIEWS */
+.reviews-section { border-bottom: 1px solid var(--line); padding-bottom: 56px; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  margin: 0 48px;
+}
+.review-card {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 26px;
+}
+.review-stars {
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.review-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.review-author {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+/* CONTACT */
+.contact-section { border-bottom: 1px solid var(--line); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+  margin: 0 48px;
+}
+.contact-block {
+  padding: 40px 0 40px;
+  border-right: 1px solid var(--line);
+  padding-right: 48px;
+}
+.contact-block:last-child { border-right: none; padding-right: 0; padding-left: 48px; }
+.contact-block-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-day { color: var(--muted); }
+.hours-time { font-family: 'DM Mono', monospace; font-size: 13px; }
+.hours-closed { color: var(--muted); }
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-item-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.contact-item-val {
+  font-size: 15px;
+  color: var(--text);
+}
+.contact-item-val a { color: var(--accent); text-decoration: none; }
+.contact-item-val a:hover { text-decoration: underline; }
+
+/* CATERING */
+.catering-banner {
+  margin: 0 48px;
+  border: 1px solid var(--line);
+  border-top: none;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--bg2);
+}
+.catering-text {}
+.catering-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.catering-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.catering-sub { font-size: 13px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+.footer-right {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 48px 24px; border-right: none; }
+  .hero-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: 280px; border-top: 1px solid var(--line); }
+  .hero-img { border-right: 1px solid var(--line); border-bottom: none; }
+  .hero-img:nth-child(2) { border-right: none; }
+  .strip { flex-wrap: wrap; }
+  .strip-item { min-width: 50%; border-bottom: 1px solid var(--line); }
+  .section-head { padding: 40px 24px 0; flex-direction: column; align-items: flex-start; gap: 0; }
+  .food-grid { grid-template-columns: 1fr 1fr; margin: 0 24px; }
+  .menu-tabs { margin: 0 24px; }
+  .menu-panel { margin: 0 24px; }
+  .reviews-grid { grid-template-columns: 1fr; margin: 0 24px; }
+  .contact-grid { grid-template-columns: 1fr; margin: 0 24px; }
+  .contact-block { border-right: none; padding-right: 0; border-bottom: 1px solid var(--line); }
+  .contact-block:last-child { padding-left: 0; }
+  .catering-banner { margin: 0 24px; flex-direction: column; align-items: flex-start; }
+  footer { padding: 24px; }
+  .footer-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><img src="suyahut-logo.png" alt="Suya Hut" /></div>
+  <div class="nav-links">
+    <a href="#food">Food</a>
+    <a href="#menu">Menu</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:2812651411" class="nav-cta">Call us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-eyebrow">Houston, TX · West African Cuisine</div>
+      <h1>
+        Taste of<br>
+        <span class="outline">Africa</span><br>
+        in Houston
+      </h1>
+      <p class="hero-body">Authentic suya, jollof rice, pepper soups and more — seasoned the way it's meant to be. Grilled fresh, every order.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-primary">View menu</a>
+        <a href="#contact" class="btn-ghost">Find us</a>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="meta-item"><div class="meta-dot"></div>11720 W Airport Blvd, Ste 1600, Houston TX</div>
+      <div class="meta-item"><div class="meta-dot"></div>Mon–Thu 11AM–9PM · Fri–Sat 11AM–10PM · Sun closed</div>
+      <div class="meta-item"><div class="meta-dot"></div>As seen on Marcus Samuelsson's "No Passport Required"</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img">
+      <img src="img-spread.png" alt="Suya spread" />
+      <div class="hero-img-label">The full spread</div>
+    </div>
+    <div class="hero-img">
+      <img src="img-shrimp.png" alt="Shrimp suya" />
+      <div class="hero-img-label">Shrimp suya</div>
+    </div>
+    <div class="hero-img">
+      <img src="img-jollof.png" alt="Jollof rice" />
+      <div class="hero-img-label">Jollof rice</div>
+    </div>
+    <div class="hero-img">
+      <img src="img-plantain.png" alt="Fried plantain" />
+      <div class="hero-img-label">Fried plantain</div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div class="strip">
+  <div class="strip-item">
+    <div class="strip-icon">🔥</div>
+    <div>
+      <div class="strip-label">Signature</div>
+      <div class="strip-val">Suya — spicy or mild</div>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">⏱</div>
+    <div>
+      <div class="strip-label">Cook time</div>
+      <div class="strip-val">~30 min — call ahead</div>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">🏆</div>
+    <div>
+      <div class="strip-label">As seen on</div>
+      <div class="strip-val">Marcus Samuelsson · PBS</div>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">🍽</div>
+    <div>
+      <div class="strip-label">Also available</div>
+      <div class="strip-val">Catering & bulk orders</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOD -->
+<section class="food-section" id="food">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Gallery</div>
+      <div class="section-title">Our food</div>
+    </div>
+    <div class="section-num">01</div>
+  </div>
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-card-img"><img src="img-suya-bulk.png" alt="Beef suya" /></div>
+      <div class="food-card-body">
+        <div class="food-card-name">Beef Suya</div>
+        <div class="food-card-desc">Grilled kabob with a blend of herbs & spices. The OG order.</div>
+        <div class="food-card-price">$2.49 / stick</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="img-shrimp.png" alt="Shrimp suya" /></div>
+      <div class="food-card-body">
+        <div class="food-card-name">Shrimp Suya</div>
+        <div class="food-card-desc">Premium grilled shrimp with full suya spice treatment.</div>
+        <div class="food-card-price">$3.99 / stick</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="img-spread.png" alt="Suya spread" /></div>
+      <div class="food-card-body">
+        <div class="food-card-name">Chicken Suya</div>
+        <div class="food-card-desc">Juicy, well-seasoned, char-grilled. Reviewers call it BOMB.</div>
+        <div class="food-card-price">$2.99 / stick</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="img-plantain.png" alt="Fried plantain" /></div>
+      <div class="food-card-body">
+        <div class="food-card-name">Fried Plantain</div>
+        <div class="food-card-desc">Soft, sweet-savory. Not the hard kind — reviewers say order extra.</div>
+        <div class="food-card-price">$1.79</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="img-jollof.png" alt="Jollof rice" /></div>
+      <div class="food-card-body">
+        <div class="food-card-name">Jollof Rice</div>
+        <div class="food-card-desc">Rice, tomato paste, and herbs. West African comfort food.</div>
+        <div class="food-card-price">$5.99 – $9.99</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="img-masa.png" alt="Masa waina" /></div>
+      <div class="food-card-body">
+        <div class="food-card-name">Masa (Waina)</div>
+        <div class="food-card-desc">Fermented rice cake. Light, crisp, classic West African side.</div>
+        <div class="food-card-price">$1.99</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Full menu</div>
+      <div class="section-title">Order up</div>
+    </div>
+    <div class="section-num">02</div>
+  </div>
+  <div class="menu-tabs">
+    <button class="m-tab active" onclick="switchTab('suya',this)">Suya & sides</button>
+    <button class="m-tab" onclick="switchTab('entrees',this)">Entrees</button>
+    <button class="m-tab" onclick="switchTab('catering',this)">Catering</button>
+  </div>
+
+  <div class="menu-panel active" id="panel-suya">
+    <div class="menu-note">*Suya available spicy or mild. Call ahead — ~30 min cook time.</div>
+    <div class="menu-group-label">Suya (per stick)</div>
+    <div class="menu-row"><div><div class="menu-name">Beef Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.49</div></div>
+    <div class="menu-row"><div><div class="menu-name">Chicken Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Shrimp Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$3.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Gizzard Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.99</div></div>
+    <div class="menu-group-label">Soups & sides</div>
+    <div class="menu-row"><div><div class="menu-name">Catfish Pepper Soup</div><div class="menu-desc">Zesty spicy soup with chunks of catfish & a delicate blend of spices</div></div><div class="menu-price">$15.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Tilapia Pepper Soup</div><div class="menu-desc">Zesty spicy soup with chunks of tilapia & a delicate blend of spices</div></div><div class="menu-price">$15.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Lansir*</div><div class="menu-desc">Salad: cilantro, tomatoes, onions & kuli kuli (powdered peanuts)</div></div><div class="menu-price">$5.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Fried Plantain</div><div class="menu-desc">Fried tropical fruit resembling the banana</div></div><div class="menu-price">$1.79</div></div>
+    <div class="menu-row"><div><div class="menu-name">Masa (Waina)</div><div class="menu-desc">Fermented rice cake</div></div><div class="menu-price">$1.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Roasted Hen</div><div class="menu-desc">Juicy grilled whole hen</div></div><div class="menu-price">$19.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Grilled Tilapia</div><div class="menu-desc">Served whole (not fillet, beware of bones) with sautéed onions & spices</div></div><div class="menu-price">$19.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Fura da Nono</div><div class="menu-desc">Yogurt & millet</div></div><div class="menu-price">$12.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Coconut Rice</div><div class="menu-desc">Rice cooked in coconut milk with mixed vegetables</div></div><div class="menu-price">$5.99 – $9.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Jollof Rice</div><div class="menu-desc">Rice, tomato paste, and herbs</div></div><div class="menu-price">$5.99 – $9.99</div></div>
+  </div>
+
+  <div class="menu-panel" id="panel-entrees">
+    <div class="menu-note">Tuwo (fufu): thick paste from rice, yam, cassava, or corn — served with your choice of soup.</div>
+    <div class="menu-group-label">Soup meals</div>
+    <div class="menu-row"><div><div class="menu-name">Vegetable Soup Meal</div><div class="menu-desc">Soup made from baobab leaves with your choice of tuwo</div></div><div class="menu-price">$18.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Egusi Soup Meal</div><div class="menu-desc">Vegetables & melon seeds, served with your tuwo choice</div></div><div class="menu-price">$18.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Okra Soup Meal</div><div class="menu-desc">Thickened with chopped okra, served with your choice of tuwo</div></div><div class="menu-price">$18.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Tomato Stew Meal</div><div class="menu-desc">Tomato paste cooked with herbs, served with steamed rice</div></div><div class="menu-price">$19.99</div></div>
+    <div class="menu-group-label">Plates</div>
+    <div class="menu-row"><div><div class="menu-name">Grilled Tilapia Meal</div><div class="menu-desc">Whole tilapia with your choice of rice, lansir, or plantain</div></div><div class="menu-price">$24.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Rice Plate</div><div class="menu-desc">Coconut or jollof rice with lansir or plantain & suya *contains peanuts</div></div><div class="menu-price">$17.99</div></div>
+  </div>
+
+  <div class="menu-panel" id="panel-catering">
+    <div class="menu-note">Parties, weddings, banquets. Call (281) 265-1411 to book.</div>
+    <div class="menu-group-label">Suya bulk (per stick)</div>
+    <div class="menu-row"><div><div class="menu-name">Beef</div><div class="menu-desc">Minimum 50 sticks</div></div><div class="menu-price">$1.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Chicken</div><div class="menu-desc">Minimum 25 sticks</div></div><div class="menu-price">$2.59</div></div>
+    <div class="menu-row"><div><div class="menu-name">Gizzard</div><div class="menu-desc">Minimum 25 sticks</div></div><div class="menu-price">$2.59</div></div>
+    <div class="menu-row"><div><div class="menu-name">Shrimp</div><div class="menu-desc">Minimum 25 sticks</div></div><div class="menu-price">$3.59</div></div>
+    <div class="menu-group-label">Rice pans (coconut or jollof)</div>
+    <div class="menu-row"><div><div class="menu-name">Jollof Rice — Small Pan</div><div class="menu-desc">Serves 6–12 people</div></div><div class="menu-price">$49.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Jollof Rice — Large Pan</div><div class="menu-desc">Serves 20–30 people</div></div><div class="menu-price">$79.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Coconut Rice — Small Pan</div><div class="menu-desc">Serves 6–12 people</div></div><div class="menu-price">$59.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Coconut Rice — Large Pan</div><div class="menu-desc">Serves 20–30 people</div></div><div class="menu-price">$89.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">White Rice — Small Pan</div><div class="menu-desc">Serves 6–12 people</div></div><div class="menu-price">$39.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">White Rice — Large Pan</div><div class="menu-desc">Serves 20–30 people</div></div><div class="menu-price">$59.99</div></div>
+    <div class="menu-group-label">Other</div>
+    <div class="menu-row"><div><div class="menu-name">Fried Plantain — Small Pan</div></div><div class="menu-price">$54.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Fried Plantain — Large Pan</div></div><div class="menu-price">$89.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Tomato Stew — Small Pan</div><div class="menu-desc">Beef or chicken</div></div><div class="menu-price">$99.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Tomato Stew — Large Pan</div><div class="menu-desc">Beef or chicken</div></div><div class="menu-price">$190.99</div></div>
+    <div class="menu-row"><div><div class="menu-name">Grilled Tilapia (bulk)</div><div class="menu-desc">Cut into chunks, orders of 20+</div></div><div class="menu-price">$16.99 ea.</div></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Testimonials</div>
+      <div class="section-title">What they say</div>
+    </div>
+    <div class="section-num">03</div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card" style="padding:0;overflow:hidden;">
+      <img src="img-tv.png" alt="Suya Hut on Marcus Samuelsson No Passport Required" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.85);min-height:220px;" />
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Drove in from Austin after seeing this food on Marcus Samuelsson's show. Never had jollof rice or suya before. It was so delicious — next time I'm ordering double."</div>
+      <div class="review-author">Anthony H.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Delicious, hospitable, and reasonably priced. The rice portions are insane. Both chicken and beef suya were smacking. Their plantains aren't the super hard ones — I should have ordered extra."</div>
+      <div class="review-author">Rajane W.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Visit us</div>
+      <div class="section-title">Find us</div>
+    </div>
+    <div class="section-num">04</div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-block">
+      <div class="contact-block-title">Hours</div>
+      <div class="hours-row"><span class="hours-day">Monday – Thursday</span><span class="hours-time">11AM – 9PM</span></div>
+      <div class="hours-row"><span class="hours-day">Friday – Saturday</span><span class="hours-time">11AM – 10PM</span></div>
+      <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time hours-closed">Closed</span></div>
+    </div>
+    <div class="contact-block">
+      <div class="contact-block-title">Get in touch</div>
+      <div class="contact-detail">
+        <div>
+          <div class="contact-item-label">Address</div>
+          <div class="contact-item-val">11720 W Airport Blvd, Ste 1600<br>Houston, TX 77477</div>
+        </div>
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-val"><a href="tel:2812651411">(281) 265-1411</a></div>
+        </div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-val"><a href="mailto:info@therealsuyahut.com">info@therealsuyahut.com</a></div>
+        </div>
+        <div>
+          <div class="contact-item-label">Instagram</div>
+          <div class="contact-item-val"><a href="https://instagram.com/suyahut_" target="_blank">@suyahut_</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="catering-banner">
+    <div class="catering-text">
+      <div class="catering-label">Events & catering</div>
+      <div class="catering-title">Hosting a party, wedding, or banquet?</div>
+      <div class="catering-sub">Suya Hut caters events of all sizes. Bulk pricing available — call to book.</div>
+    </div>
+    <a href="tel:2812651411" class="btn-primary">Call to book</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo"><img src="suyahut-logo.png" alt="Suya Hut" style="height:56px;width:auto;opacity:0.7;" /></div>
+  <div class="footer-right">
+    11720 W Airport Blvd, Ste 1600, Houston TX 77477<br>
+    info@therealsuyahut.com · @suyahut_ · Sun: closed
+  </div>
+</footer>
+
+<script>
+function switchTab(id, el) {
+  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.m-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
