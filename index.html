@@ -381,12 +381,22 @@ nav {
 .menu-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 18px 0;
+  align-items: center;
+  padding: 14px 0;
   border-bottom: 1px solid var(--line);
-  gap: 24px;
+  gap: 16px;
 }
 .menu-row:last-child { border-bottom: none; }
+.menu-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+  filter: saturate(0.8) brightness(0.85);
+  transition: filter 0.3s;
+}
+.menu-row:hover .menu-thumb { filter: saturate(1) brightness(1); }
 .menu-name {
   font-size: 15px;
   font-weight: 400;
@@ -747,21 +757,21 @@ footer {
   <div class="menu-panel active" id="panel-suya">
     <div class="menu-note">*Suya available spicy or mild. Call ahead — ~30 min cook time.</div>
     <div class="menu-group-label">Suya (per stick)</div>
-    <div class="menu-row"><div><div class="menu-name">Beef Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.49</div></div>
-    <div class="menu-row"><div><div class="menu-name">Chicken Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.99</div></div>
-    <div class="menu-row"><div><div class="menu-name">Shrimp Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$3.99</div></div>
-    <div class="menu-row"><div><div class="menu-name">Gizzard Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.99</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-suya-bulk.png" alt="Beef Suya" /><div><div class="menu-name">Beef Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.49</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-spread.png" alt="Chicken Suya" /><div><div class="menu-name">Chicken Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.99</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-shrimp.png" alt="Shrimp Suya" /><div><div class="menu-name">Shrimp Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$3.99</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-suya-bulk.png" alt="Gizzard Suya" /><div><div class="menu-name">Gizzard Suya*</div><div class="menu-desc">Grilled kabob seasoned with herbs & spices</div></div><div class="menu-price">$2.99</div></div>
     <div class="menu-group-label">Soups & sides</div>
     <div class="menu-row"><div><div class="menu-name">Catfish Pepper Soup</div><div class="menu-desc">Zesty spicy soup with chunks of catfish & a delicate blend of spices</div></div><div class="menu-price">$15.99</div></div>
     <div class="menu-row"><div><div class="menu-name">Tilapia Pepper Soup</div><div class="menu-desc">Zesty spicy soup with chunks of tilapia & a delicate blend of spices</div></div><div class="menu-price">$15.99</div></div>
     <div class="menu-row"><div><div class="menu-name">Lansir*</div><div class="menu-desc">Salad: cilantro, tomatoes, onions & kuli kuli (powdered peanuts)</div></div><div class="menu-price">$5.99</div></div>
-    <div class="menu-row"><div><div class="menu-name">Fried Plantain</div><div class="menu-desc">Fried tropical fruit resembling the banana</div></div><div class="menu-price">$1.79</div></div>
-    <div class="menu-row"><div><div class="menu-name">Masa (Waina)</div><div class="menu-desc">Fermented rice cake</div></div><div class="menu-price">$1.99</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-plantain.png" alt="Fried Plantain" /><div><div class="menu-name">Fried Plantain</div><div class="menu-desc">Fried tropical fruit resembling the banana</div></div><div class="menu-price">$1.79</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-masa.png" alt="Masa Waina" /><div><div class="menu-name">Masa (Waina)</div><div class="menu-desc">Fermented rice cake</div></div><div class="menu-price">$1.99</div></div>
     <div class="menu-row"><div><div class="menu-name">Roasted Hen</div><div class="menu-desc">Juicy grilled whole hen</div></div><div class="menu-price">$19.99</div></div>
     <div class="menu-row"><div><div class="menu-name">Grilled Tilapia</div><div class="menu-desc">Served whole (not fillet, beware of bones) with sautéed onions & spices</div></div><div class="menu-price">$19.99</div></div>
     <div class="menu-row"><div><div class="menu-name">Fura da Nono</div><div class="menu-desc">Yogurt & millet</div></div><div class="menu-price">$12.99</div></div>
-    <div class="menu-row"><div><div class="menu-name">Coconut Rice</div><div class="menu-desc">Rice cooked in coconut milk with mixed vegetables</div></div><div class="menu-price">$5.99 – $9.99</div></div>
-    <div class="menu-row"><div><div class="menu-name">Jollof Rice</div><div class="menu-desc">Rice, tomato paste, and herbs</div></div><div class="menu-price">$5.99 – $9.99</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-coconut-rice.png" alt="Coconut Rice" /><div><div class="menu-name">Coconut Rice</div><div class="menu-desc">Rice cooked in coconut milk with mixed vegetables</div></div><div class="menu-price">$5.99 – $9.99</div></div>
+    <div class="menu-row"><img class="menu-thumb" src="img-coconut-rice.png" alt="Jollof Rice" /><div><div class="menu-name">Jollof Rice</div><div class="menu-desc">Rice, tomato paste, and herbs</div></div><div class="menu-price">$5.99 – $9.99</div></div>
   </div>
 
   <div class="menu-panel" id="panel-entrees">
