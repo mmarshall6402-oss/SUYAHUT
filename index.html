@@ -76,6 +76,51 @@ nav {
   transition: all 0.2s;
 }
 .nav-cta:hover { background: var(--brand); color: #fff; }
+.nav-cta-order {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  background: var(--brand);
+  color: #fff;
+  border: 1px solid var(--brand);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-cta-order:hover { background: var(--brand2); border-color: var(--brand2); }
+.nav-order-wrap {
+  position: relative;
+}
+.nav-order-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  min-width: 160px;
+  z-index: 200;
+  overflow: hidden;
+}
+.nav-order-dropdown a {
+  display: block;
+  padding: 12px 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-order-dropdown a:last-child { border-bottom: none; }
+.nav-order-dropdown a:hover { background: var(--brand); color: #fff; }
+.nav-order-wrap:hover .nav-order-dropdown { display: block; }
 
 /* HERO */
 .hero {
@@ -648,7 +693,8 @@ footer {
 
 @media (max-width: 768px) {
   nav { padding: 16px 20px; }
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links a:not(.nav-cta):not(.nav-cta-order) { display: none; }
+  .nav-order-wrap { display: flex; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 48px 24px; border-right: none; }
   .hero-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: 280px; border-top: 1px solid var(--line); }
@@ -683,6 +729,14 @@ footer {
     <a href="#order">Order</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
+    <div class="nav-order-wrap">
+      <a href="#order" class="nav-cta-order">Order online</a>
+      <div class="nav-order-dropdown">
+        <a href="https://www.ubereats.com/store/suya-hut/RIVfdawpSLKmOZJmsHf9Ug?diningMode=PICKUP&rwg_token=AFd1xnEPGzfRjYRj2o-WxhyFUyj3q6ubZOtQkwuFmouLbC3mt8Jco2V-haxItv-yBG_c8Ub5Wl6_N_4peMHcrvrhLTOrsvETow%3D%3D&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas&from_challenge=1" target="_blank" rel="noopener">Uber Eats</a>
+        <a href="https://www.doordash.com/store/suya-hut-meadows-place-27736234/32132748/?pickup=true&rwg_token=AFd1xnHgSGpLVjjHXvXrm8GXx6nsMnqQzR2jtCaaHuVL8x1j-XXrJmYpeOm68GWih9-hzlhd9jfldPmu1ABkkMRTE65GVl_xpQ==&utm_campaign=gpa" target="_blank" rel="noopener">DoorDash</a>
+        <a href="https://postmates.com/store/suya-hut/RIVfdawpSLKmOZJmsHf9Ug?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas&rwg_token=AFd1xnF7NXufLMZstLHAzL7rENVi6_Fu0jXXuCmZfQIabd5js6ziLecwliVsHyLd7ENuX0aY7rY03_BDoQMOwCpXoQyVwX0exw%3D%3D" target="_blank" rel="noopener">Postmates</a>
+      </div>
+    </div>
     <a href="tel:2812651411" class="nav-cta">Call us</a>
   </div>
 </nav>
